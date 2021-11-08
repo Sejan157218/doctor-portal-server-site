@@ -21,6 +21,8 @@ admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
 
+
+// for verify JWT token
 async function verifyToken(req, res, next) {
     if (req.headers?.authorization?.startsWith('Bearer ')) {
         const token = req.headers.authorization.split(' ')[1];
